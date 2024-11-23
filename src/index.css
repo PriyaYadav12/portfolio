@@ -1,5 +1,17 @@
+:root {
+  /* Color palette */
+  --color-cream: #f4f1de;
+  --color-green: #81b29a;
+  --color-orange: #f2cc8f;
+  --color-dark-orange: #d6840a;
+  --color-navy: #3d405b;
+}
+
+/* Base styles */
 body {
   margin: 0;
+  height: 100vh;
+  background-color: var(--color-cream);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -8,6 +20,86 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Layout */
+.App {
+  height: 100vh;
+}
+
+/* Common card styles */
+.skills,
+.profile,
+.welcome,
+.projects,
+.resume,
+.templates {
+  border-radius: 10px;
+  margin: 10px;
+  min-height: 300px;
+}
+
+/* Section-specific styles */
+.skills,
+.welcome {
+  background-color: var(--color-green);
+}
+
+.profile,
+.projects {
+  background-color: var(--color-orange);
+}
+
+.resume,
+.templates {
+  background-color: var(--color-navy);
+}
+
+.templates {
+  min-height: 610px;
+}
+
+/* Title and text styles */
+.Title {
+  margin-left: 10px;
+  display: flex;
+  gap: 4px;
+}
+
+.skills-text {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--color-cream);
+}
+
+.skills-text.accent {
+  color: var(--color-dark-orange);
+}
+
+.projectText {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--color-green);
+}
+
+.templateText {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--color-orange);
+}
+
+/* Image styles */
+.skillsImage {
+  border-radius: 10px;
+  width: 50%;
+  height: 100%;
+  margin-left: 50%;
+  margin-top: 10%;
+}
+
+.profileImage {
+  border-radius: 10px;
+  width: 50%;
+  height: 50%;
 }
