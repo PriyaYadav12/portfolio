@@ -1,9 +1,14 @@
 import React from 'react';
-import ProfileImage from '../assets/Girl.avif';
+import girlImage from '../assets/GirlImage.png'
 
 function Profile() {
   return <div className='profile' >
-    <div className='Title'>
+    <div className='profilediv'>
+    <img 
+      src={girlImage}
+      alt = "Profile"
+      className='profileImage'
+      />
     </div>
 
   </div>;

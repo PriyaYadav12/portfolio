@@ -12,11 +12,14 @@ body {
   margin: 0;
   height: 100vh;
   background-color: var(--color-cream);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Just Me Again Down Here", cursive;
+  font-weight: 500;
+  font-size: 2rem;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+
 }
 
 code {
@@ -62,15 +65,56 @@ code {
 
 /* Title and text styles */
 .Title {
-  margin-left: 10px;
+  margin-left: 10%;
   display: flex;
   gap: 4px;
 }
+/* Style for the container */
+.titleText {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 200px;
+  position: relative;
+}
+
+/* Style for each paragraph */
+.titleText p {
+  margin: 0;
+  transform: translateY(50px);
+  opacity: 0;
+  animation: slideUp 1s ease-out forwards;
+  color: var(--color-cream);
+}
+
+.titleText p:nth-child(1) {
+  animation-delay: 0s;
+}
+.titleText p:nth-child(2) {
+  animation-delay: 1s; /* Delayed to start after the first */
+}
+.titleText p:nth-child(3) {
+  animation-delay: 2s; /* Delayed to start after the second */
+}
+
+/* Keyframes for sliding up */
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.name{
+  color: var(--color-dark-orange);
+} 
 
 .skills-text {
-  font-size: 1rem;
-  font-weight: bold;
   color: var(--color-cream);
+  display: inline;
 }
 
 .skills-text.accent {
@@ -78,28 +122,83 @@ code {
 }
 
 .projectText {
-  font-size: 1rem;
-  font-weight: bold;
   color: var(--color-green);
 }
 
 .templateText {
-  font-size: 1rem;
-  font-weight: bold;
   color: var(--color-orange);
 }
 
 /* Image styles */
 .skillsImage {
-  border-radius: 10px;
-  width: 50%;
-  height: 100%;
-  margin-left: 50%;
-  margin-top: 10%;
+  position:absolute;
+  width: 70%;
+  height: 70%;
+  right:42%;
+  top:-8%;
+
 }
 
-.profileImage {
-  border-radius: 10px;
+.profileImage{
+  position: absolute;
+  top: 10%;
+  right: 65%;
+  width: 60%;
+  height: 100%;
+}
+.projectImage{
+  position:absolute;
+  width: 70%;
+  height: 90%;
+  right: 8%;
+  bottom: 12%;
+}
+.resumeImage{
+  position:absolute;
   width: 50%;
-  height: 50%;
+  height: 100%;
+  left: 23%;
+  top:30%;
+}
+.templateImage {
+  position: absolute;
+  width: 100%;
+  height: 120%;
+}
+
+/* Add positioning for each template image */
+.templateImage:nth-child(1) {
+  left: 35%;
+  top: -16%;
+}
+
+.templateImage:nth-child(2) {
+  left: 35%;
+  top: 3%;
+}
+
+.templateImage:nth-child(3) {
+  left: 35%;
+  top: 23%;
+}
+.templateImage:nth-child(4) {
+  left: 35%;
+  top:42%
+}
+.socialLink{
+  position: absolute;
+  width: 70%;
+  height: 70%;
+}
+.LinkedIn{
+  top: 60%;
+  right: 43%;
+}
+.gitHub{
+  top: 64%;
+  right: 42%;
+}
+.email{
+  top: 64%;
+  right: 39%;
 }

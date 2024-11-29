@@ -1,12 +1,16 @@
 import React from 'react';
-import SkillsImage from '../assets/skills.jpg';
-
+import skillImage from '../assets/skillImage.png'
 function Skills() {
   return <div className='skills'>
     <div className='Title'>
-      <p className="skills-text">Skills And</p>
-      <p className="skills-text accent">Tools</p>
+      <p className="skills-text">Skills And  </p>
+      <p className="skills-text accent"> Tools</p>
     </div>
+    <img 
+        src= {skillImage}
+        alt="skillImage"
+        className='skillsImage'
+      />
   </div>;
 }
 
