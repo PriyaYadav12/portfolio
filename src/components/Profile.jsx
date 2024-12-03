@@ -1,8 +1,11 @@
 import React from 'react';
 import girlImage from '../assets/GirlImage.png'
+import Grid from '@mui/material/Grid2';
+
 
 function Profile() {
-  return <div className='profile' >
+  return <Grid xs={6} sx={{ minWidth: '250px' }}>
+  <div className='profile' >
     <div className='profilediv'>
     <img 
       src={girlImage}
@@ -11,7 +14,7 @@ function Profile() {
       />
     </div>
 
-  </div>;
+  </div></Grid>;
 }
 
 export default Profile;

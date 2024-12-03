@@ -186,19 +186,8 @@ code {
   top:42%
 }
 .socialLink{
-  position: absolute;
-  width: 70%;
-  height: 70%;
+  color: #f4f1de;
 }
-.LinkedIn{
-  top: 60%;
-  right: 43%;
-}
-.gitHub{
-  top: 64%;
-  right: 42%;
-}
-.email{
-  top: 64%;
-  right: 39%;
+.icons{
+  color: #f4f1de;
 }
