@@ -1,21 +1,30 @@
 import React from 'react';
-import project from '../assets/projectImage.png';
-import Grid from '@mui/material/Grid2';
+import { useNavigate } from 'react-router-dom';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 function Projects() {
-  return             <Grid xs={12} sx={{ minHeight: '300px', pt: 6 }}>
-<div className='projects'>
-    <div className='Title'>
-      <p className="projectText">Projects</p>
-      <img 
-      src={project}
-      alt = "project"
-      className='projectImage'
-      />
 
-    </div>
+  const navigate = useNavigate();
+  return (
+    <div className='projects' >
+      <div className='Title'>
+        <p className="projectText" onClick={() => navigate('/screen/project')}>Projects</p>
+        <div className='projectanimation'>
+          <DotLottieReact
+            src="https://lottie.host/6c51d384-eda0-4bec-a84c-a89e02aedff7/ycMe5an0qJ.lottie"
+            loop
+            autoplay
+          />
+        </div>
+        <p className="projectDesc">"Showcasing My Creations!" <br />
+          Explore the diverse range of projects I've worked on, from full-stack applications to innovative solutions.
+          Click to see how I bring ideas to life!
+        </p>
 
-  </div></Grid>;
+
+      </div>
+
+    </div>);
 }
 
 export default Projects;

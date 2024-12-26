@@ -1,193 +1,388 @@
-:root {
-  /* Color palette */
-  --color-cream: #f4f1de;
-  --color-green: #81b29a;
-  --color-orange: #f2cc8f;
-  --color-dark-orange: #d6840a;
-  --color-navy: #3d405b;
-}
-
-/* Base styles */
+/* Base Styles */
 body {
   margin: 0;
   height: 100vh;
-  background-color: var(--color-cream);
+  background-color: #000000;
   font-family: "Just Me Again Down Here", cursive;
   font-weight: 500;
   font-size: 2rem;
-  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
-
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/* Layout */
+p {
+  margin: 0;
+  text-align: justify;
+}
+
+tr, td {
+  font-family: serif;
+  color: #fff;
+}
+
+tr {
+  font-size: 1rem;
+}
+
+td {
+  vertical-align: middle;
+}
+
 .App {
   height: 100vh;
 }
 
-/* Common card styles */
-.skills,
-.profile,
-.welcome,
-.projects,
-.resume,
+/* Common Card Styles */
+.profile, 
+.welcome, 
+.projects, 
+.resume, 
 .templates {
   border-radius: 10px;
   margin: 10px;
   min-height: 300px;
-}
+  background: linear-gradient(to bottom right, #010043, #3d405b);
+  animation: grow 1s ease-in-out;
 
-/* Section-specific styles */
-.skills,
-.welcome {
-  background-color: var(--color-green);
-}
-
-.profile,
-.projects {
-  background-color: var(--color-orange);
 }
 
 .resume,
 .templates {
-  background-color: var(--color-navy);
+  background: linear-gradient(90deg, #010043, #3d405b);
 }
 
-.templates {
-  min-height: 610px;
+.profile,
+.projects {
+  background: linear-gradient(180deg, #010043, #3d405b);
 }
 
-/* Title and text styles */
+.welcome {
+  min-height: 335px;
+}
+
+/* Title and Text Styles */
 .Title {
-  margin-left: 10%;
-  display: flex;
-  gap: 4px;
+  margin-left: 5%;
 }
-/* Style for the container */
+
 .titleText {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding-top: 5rem;
+}
+
+.titleText .myself,
+.description,
+.projectDesc,
+.projectText,
+.experienceHeader,
+.templateText {
+  color: #fff !important;
+}
+
+.titleText .myself {
+  font-size: 1.5rem !important;
+}
+
+.description, 
+.projectDesc {
+  font-family: serif;
+  font-size: 1rem !important;
+  margin-right: 20px;
+  line-height: 2rem;
+}
+
+/* Profile and Image Styles */
+.profilediv {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 10px;
+  height: 335px;
+  background-color: #3d405b;
+  animation: grow 1s ease-in-out !important;
+}
+.projectanimation{
+  margin-left: -20px;
+  width: 10rem;
+  height: 5rem;
+}  
+.profileImage {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
+}
+
+.socialLink, 
+.icons {
+  color: #f4f1de;
+}
+
+/* Experience Table */
+.experienceTable {
+  width: 100%;
+  border-collapse: collapse;
   min-height: 200px;
+}
+
+.period {
+  width: 20%;
+  text-align: center;
+}
+
+/* Containers and Grids */
+.selfContainer, 
+.experienceScreenContainer
+{
+  min-height: 335px;
+  border-radius: 10px;
+}
+
+.selfContainer {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  background: linear-gradient(to bottom right, #543A14, #F0BB78);
+  box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+
+.experienceScreenContainer {
+  margin-right: 1rem;
+  margin-top: 1rem;
+  background-color: #F0BB78;
+  box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.2);
+  min-height: 367px !important;
+
+}
+
+.resumeGrid {
+  background: linear-gradient(to bottom right, #543A14, #F0BB78);
+  min-height: 280px;
+  box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
   position: relative;
 }
 
-/* Style for each paragraph */
-.titleText p {
-  margin: 0;
-  transform: translateY(50px);
-  opacity: 0;
-  animation: slideUp 1s ease-out forwards;
-  color: var(--color-cream);
+.educationContainer {
+  margin-right: 1rem;
 }
 
-.titleText p:nth-child(1) {
+.projectContainer {
+  margin-left: 1rem;
+}
+.homeDiv {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.projectDiv {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.homeDiv p{
+  display: inline;
+  color: #f4f1de;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.projectDiv p{
+  display: inline;
+  color: #f4f1de;
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+
+}
+.overlap-text {
+  position: absolute;
+  top: 40%;
+  left: 8%; /* Center horizontally */
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 30%;
+  justify-content: space-between;
+  pointer-events: none; 
+  z-index: 1;
+}
+
+.word {
+  font-family: "Londrina Outline", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5rem; 
+  color: #FFF0DC; 
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  mix-blend-mode: difference; 
+  opacity: 0;
+  animation: slide-up 0.8s ease-in-out forwards;
+}
+.word:nth-child(1) {
   animation-delay: 0s;
 }
-.titleText p:nth-child(2) {
-  animation-delay: 1s; /* Delayed to start after the first */
-}
-.titleText p:nth-child(3) {
-  animation-delay: 2s; /* Delayed to start after the second */
+
+.word:nth-child(2) {
+  animation-delay: 0.3s;
 }
 
-/* Keyframes for sliding up */
-@keyframes slideUp {
+.word:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Animation keyframes */
+
+.introSection{
+  flex: 2;
+  margin-left: 1rem;
+  font-size: 1rem;
+  color: #FFF0DC;
+  width: 50%;
+  text-align: justify;
+}
+.introSection h2{
+  font-size: 3rem;
+}
+.introSection p{
+  font-size: 1rem;
+  font-family: serif;
+}
+.introSection span{
+  font-size: 1.5rem;
+}
+.imageSection {
+  flex: 1;
+  text-align: center;
+  background-color: #543A14;
+  max-width: 25%;
+  overflow: hidden;
+  position: relative; 
+  height: 320px;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-end; 
+  border-radius: 10px;
+}
+
+.myImage {
+  width: 70%; 
+  height: auto; 
+  align-self: center; 
+  margin-top: auto; 
+  transform: translateY(50%); 
+}
+
+.socialMedia {
+  background-color: #131010;
+  width: 100%;
+  height: auto;
+  position: static; 
+  z-index: 100;
+}
+.skillDiv{
+  padding-left: 0.5rem;
+
+}
+.skillSpan{
+  color: #f4f1de;
+  font-family: serif;
+  font-size: 1rem;
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+  padding-right: 0.5rem;
+
+}
+.experienceDiv{
+  padding-left: 2rem;
+  padding-top: 1rem;
+  color: #f4f1de !important;
+}
+.experienceHeader{
+  font-family: "Just Me Again Down Here", cursive ;
+  font-size: 3rem;
+
+}
+.experienceItem {
+  margin-bottom: 2rem; /* Add spacing between items */
+
+}
+
+.experienceIcon {
+  font-size: 1rem; 
+  margin-right: 5px; 
+}
+
+.experienceDetails {
+  display: inline-block;
+  text-align: justify;
+  font-family: serif;
+
+}
+
+.experienceTitle {
+  font-size: 1rem;
+  font-weight: bold; /* Optional: Make the title stand out */
+}
+
+.experiencePeriod {
+  font-size: 1rem;
+  margin-left: 10px; /* Optional: Space between title and period */
+}
+
+.experienceCompany {
+  display: block;
+  font-size: 1rem;
+  margin-top: 5px;
+  margin-left: 2rem;
+}
+.downloadDiv{
+  position: absolute;
+  margin-top: -5rem;
+  width:5rem;
+  height: 5rem;
+  z-index: 100;
+  margin-left:90rem ;
+}
+
+/*keyFrames */
+@keyframes grow {
   from {
-    transform: translateY(50px);
-    opacity: 0;
+    transform: scale(0.5); /* Start smaller */
+    opacity: 0; /* Start invisible */
   }
   to {
-    transform: translateY(0);
-    opacity: 1;
+    transform: scale(1); /* Full size */
+    opacity: 1; /* Fully visible */
   }
 }
-.name{
-  color: var(--color-dark-orange);
-} 
 
-.skills-text {
-  color: var(--color-cream);
-  display: inline;
-}
-
-.skills-text.accent {
-  color: var(--color-dark-orange);
-}
-
-.projectText {
-  color: var(--color-green);
-}
-
-.templateText {
-  color: var(--color-orange);
-}
-
-/* Image styles */
-.skillsImage {
-  position:absolute;
-  width: 70%;
-  height: 70%;
-  right:42%;
-  top:-8%;
-
-}
-
-.profileImage{
-  position: absolute;
-  top: 10%;
-  right: 65%;
-  width: 60%;
-  height: 100%;
-}
-.projectImage{
-  position:absolute;
-  width: 70%;
-  height: 90%;
-  right: 8%;
-  bottom: 12%;
-}
-.resumeImage{
-  position:absolute;
-  width: 50%;
-  height: 100%;
-  left: 23%;
-  top:30%;
-}
-.templateImage {
-  position: absolute;
-  width: 100%;
-  height: 120%;
-}
-
-/* Add positioning for each template image */
-.templateImage:nth-child(1) {
-  left: 35%;
-  top: -16%;
-}
-
-.templateImage:nth-child(2) {
-  left: 35%;
-  top: 3%;
-}
-
-.templateImage:nth-child(3) {
-  left: 35%;
-  top: 23%;
-}
-.templateImage:nth-child(4) {
-  left: 35%;
-  top:42%
-}
-.socialLink{
-  color: #f4f1de;
-}
-.icons{
-  color: #f4f1de;
+@keyframes slide-up {
+  from {
+      transform: translateY(100%); 
+      opacity: 0; 
+  }
+  to {
+      transform: translateY(0); 
+      opacity: 1; 
+  }
 }

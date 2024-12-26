@@ -1,20 +1,15 @@
 import React from 'react';
-import girlImage from '../assets/GirlImage.png'
-import Grid from '@mui/material/Grid2';
+import girlProfile from '../assets/girlProfile.jpg'
 
 
 function Profile() {
-  return <Grid xs={6} sx={{ minWidth: '250px' }}>
-  <div className='profile' >
-    <div className='profilediv'>
+  return (<div className='profilediv'>
     <img 
-      src={girlImage}
+      src={girlProfile}
       alt = "Profile"
       className='profileImage'
       />
-    </div>
-
-  </div></Grid>;
+    </div>);
 }
 
 export default Profile;

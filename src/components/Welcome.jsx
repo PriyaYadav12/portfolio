@@ -1,5 +1,4 @@
 import React from 'react';
-import Grid from '@mui/material/Grid2';
 import { Box } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -7,27 +6,26 @@ import EmailIcon from '@mui/icons-material/Email';
 
 function Welcome() {
   return (
-    <Grid xs={6} sx={{ minWidth: '250px' }}>
       <div className="welcome">
         <div className="Title">
           <div className="titleText">
-            <p>Hey there,</p>
-            <p>
-              I am <span className="name">Priya</span>,
+            <p className='myself'>My name is Priya,<br />
+            I am a Web Developer <br />
+            Working and Living in INDIA
             </p>
-            <p>Web developer</p>
+            <p className='description'>Innovative developer with a passion for creating seamless digital experiences, 
+              streamlining systems, and delivering exceptional value through impactful solutions.</p>
           </div>
         </div>
         {/* Social Links Section */}
         <Box
           sx={{
             display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
             gap: 2,
             marginTop: 2,
             position: 'relative', 
             zIndex: 1, 
+            marginLeft:12,
           }}
         >
           <a
@@ -56,7 +54,6 @@ function Welcome() {
           </a>
         </Box>
       </div>
-    </Grid>
   );
 }
 

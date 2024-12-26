@@ -1,24 +1,29 @@
 import React from 'react';
-import templateImage from '../assets/templateImage.png';
-import Grid from '@mui/material/Grid2';
+import { useNavigate } from 'react-router-dom';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
 
 function Templates() {
-  return             <Grid xs={12} sx={{ minHeight: '100%', pt: 5 }}>
-<div className='templates'>
-    <div className='Title'>
-      <p className="templateText">Templates</p>
-      <div className="template-images">
-        {Array.from({ length: 4 }, (_, index) => (
-          <img 
-            key={index}
-            src={templateImage}
-            alt='templateImage'
-            className='templateImage'
+  const navigate = useNavigate();
+
+  return (
+    <div className='templates'>
+      <div className='Title'>
+        <p className="templateText" onClick={() => navigate('/screen/template')}>Templates</p>
+        <div className='projectanimation'>
+          <DotLottieReact
+            src="https://lottie.host/78cc36f6-12ec-4f19-9353-cdeb8cf32158/FSqMrfvoN3.lottie"
+            loop
+            autoplay
           />
-        ))}
+        </div>
+        <p className="projectDesc">"Creative Resources at Your Fingertips!" <br />
+          Discover customizable templates designed to simplify and enhance your workflow.
+          Click to find resources tailored to your needs!
+        </p>
+
       </div>
-    </div>
-  </div></Grid>;
+    </div>);
 }
 
 export default Templates;
